@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Download, Phone } from "lucide-react";
+import mobileCareLogoPath from "@assets/logo_1750996009126.jpg";
 
 export default function AboutSection() {
   return (
@@ -8,11 +9,13 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <img 
-              src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-              alt="Professional dentist training session" 
-              className="rounded-xl shadow-lg w-full"
-            />
+            <div className="bg-light-gray rounded-xl shadow-lg p-8 w-full">
+              <img 
+                src={mobileCareLogoPath} 
+                alt="Mobile Care Dentistry Logo" 
+                className="w-full h-auto max-w-sm mx-auto"
+              />
+            </div>
           </div>
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">

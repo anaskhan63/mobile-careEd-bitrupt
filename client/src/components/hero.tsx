@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { GraduationCap, Calendar } from "lucide-react";
+import mobileCareLogoPath from "@assets/logo_1750996009126.jpg";
 
 export default function Hero() {
   return (
@@ -40,11 +41,13 @@ export default function Hero() {
             </div>
           </div>
           <div className="lg:text-right">
-            <img 
-              src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-              alt="Professional dentist training session" 
-              className="rounded-xl shadow-2xl w-full max-w-lg mx-auto lg:mx-0"
-            />
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl shadow-2xl p-8 w-full max-w-lg mx-auto lg:mx-0">
+              <img 
+                src={mobileCareLogoPath} 
+                alt="Mobile Care Dentistry Logo" 
+                className="w-full h-auto max-w-md mx-auto"
+              />
+            </div>
           </div>
         </div>
       </div>
