@@ -77,7 +77,7 @@ export class MemStorage implements IStorage {
         price: "500.00",
         ceCredits: 10,
         duration: 20,
-        features: ["Comprehensive equipment training", "CDC compliance guidelines", "Hands-on practice sessions", "Professional certification"],
+        features: ["Comprehensive equipment training", "CDC compliance guidelines", "Professional certification"],
         imageUrl: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
         isActive: true
       },
