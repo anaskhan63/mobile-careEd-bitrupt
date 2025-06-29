@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Download, Phone } from "lucide-react";
+import { CheckCircle, Phone, UserPlus } from "lucide-react";
 import mobileCareLogoPath from "@assets/logo_1750996009126.jpg";
 
 export default function AboutSection() {
@@ -49,9 +49,14 @@ export default function AboutSection() {
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-primary-blue text-white hover:bg-blue-600 transition-colors duration-200">
-                <Download className="mr-2 h-4 w-4" />
-                Download Course Guide
+              <Button 
+                className="bg-primary-blue text-white hover:bg-blue-600 transition-colors duration-200"
+                asChild
+              >
+                <Link href="/registration">
+                  <UserPlus className="mr-2 h-4 w-4" />
+                  Register Now
+                </Link>
               </Button>
               <Button 
                 variant="outline"
