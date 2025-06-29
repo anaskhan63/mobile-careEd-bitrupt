@@ -74,17 +74,17 @@ export class MemStorage implements IStorage {
       {
         title: "Mobile Dentistry Fundamentals",
         description: "Learn the essentials of mobile dental practice including equipment setup, infection control, and patient management in home settings.",
-        price: "495.00",
-        ceCredits: 8,
-        duration: 16,
-        features: ["Comprehensive equipment training", "CDC compliance guidelines", "Hands-on practice sessions", "Starter kit included"],
+        price: "500.00",
+        ceCredits: 10,
+        duration: 20,
+        features: ["Comprehensive equipment training", "CDC compliance guidelines", "Hands-on practice sessions", "Professional certification"],
         imageUrl: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
         isActive: true
       },
       {
         title: "Advanced Mobile Practice Management",
         description: "Master the business aspects of mobile dentistry including billing, insurance, marketing, and practice expansion strategies.",
-        price: "695.00",
+        price: "1000.00",
         ceCredits: 12,
         duration: 24,
         features: ["Insurance billing & coding", "Marketing strategies", "Practice expansion planning", "Legal compliance"],
@@ -94,7 +94,7 @@ export class MemStorage implements IStorage {
       {
         title: "Complete Mobile Dentistry Certification",
         description: "Comprehensive certification program covering all aspects of mobile dental practice from setup to advanced clinical procedures.",
-        price: "1295.00",
+        price: "5000.00",
         ceCredits: 20,
         duration: 40,
         features: ["Full certification program", "Live patient demonstrations", "Complete starter kit", "1-year mentorship"],
