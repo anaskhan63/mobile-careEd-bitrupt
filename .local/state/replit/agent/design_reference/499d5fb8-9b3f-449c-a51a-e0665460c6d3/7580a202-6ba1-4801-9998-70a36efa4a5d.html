@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Care Dentistry - California Dental Board CE Courses</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#0099cc',
+                        'brand-gray': '#6B7280',
+                        'accent-blue': '#3B82F6'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- @COMPONENT: Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <!-- Mobile Care Dentistry Logo -->
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="w-12 h-12 bg-brand-blue rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-tooth text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-xl font-bold text-brand-blue">MOBILE CARE</h1>
+                            <p class="text-sm text-brand-gray font-medium">DENTISTRY</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#courses" class="text-gray-700 hover:text-brand-blue px-3 py-2 text-sm font-medium transition-colors">Courses</a>
+                        <a href="#pricing" class="text-gray-700 hover:text-brand-blue px-3 py-2 text-sm font-medium transition-colors">Pricing</a>
+                        <a href="#about" class="text-gray-700 hover:text-brand-blue px-3 py-2 text-sm font-medium transition-colors">About</a>
+                        <a href="#contact" class="text-gray-700 hover:text-brand-blue px-3 py-2 text-sm font-medium transition-colors">Contact</a>
+                        <button data-event="click:handleLogin" class="bg-brand-blue text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors font-medium">
+                            Sign In
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="md:hidden">
+                    <button data-event="click:toggleMobileMenu" class="text-gray-700 hover:text-brand-blue">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <section class="bg-gradient-to-br from-brand-blue to-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                        California Dental Board CE Courses
+                    </h2>
+                    <p class="text-xl mb-8 text-blue-100">
+                        Advance your mobile dentistry expertise with our comprehensive continuing education courses. 
+                        Designed by professionals, for professionals.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button data-event="click:scrollToCourses" class="bg-white text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            Browse Courses
+                        </button>
+                        <button data-event="click:openScheduleModal" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-brand-blue transition-colors">
+                            Schedule Consultation
+                        </button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <!-- Professional mobile dental equipment setup -->
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                         alt="Mobile dental equipment and professional setup" 
+                         class="rounded-xl shadow-2xl w-full h-auto" />
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-lg">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-certificate text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-900">CA Board Approved</p>
+                                <p class="text-sm text-gray-600">All courses certified</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: Course Catalog -->
+    <section id="courses" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Featured CE Courses
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive continuing education courses designed to enhance your mobile dentistry practice
+                </p>
+            </div>
+
+            <!-- @MAP: courses.map(course => ( -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Course 1: Mobile Dentistry Fundamentals -->
+                <div class="bg-white rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
+                    <!-- Mobile dental training session -->
+                    <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300" 
+                         alt="Professional dental training session with mobile equipment" 
+                         class="w-full h-48 object-cover rounded-t-xl" />
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-brand-blue text-white text-xs font-semibold px-3 py-1 rounded-full">
+                                16 CE Hours
+                            </span>
+                            <span class="text-brand-blue font-semibold text-lg">$400</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Mobile Dentistry Fundamentals</h3>
+                        <p class="text-gray-600 mb-4">
+                            Complete foundation course covering mobile dental practice setup, equipment management, and patient care protocols.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span data-bind="course.duration">16 hours</span>
+                            </div>
+                            <button data-event="click:registerCourse" data-course-id="mobile-fundamentals" 
+                                    class="bg-brand-blue text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors font-medium">
+                                Register Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 2: Advanced Mobile Equipment -->
+                <div class="bg-white rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
+                    <!-- Advanced dental equipment and technology -->
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300" 
+                         alt="Advanced dental equipment and digital technology" 
+                         class="w-full h-48 object-cover rounded-t-xl" />
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                                12 CE Hours
+                            </span>
+                            <span class="text-brand-blue font-semibold text-lg">$350</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Advanced Mobile Equipment Mastery</h3>
+                        <p class="text-gray-600 mb-4">
+                            Master the latest portable dental technology, digital imaging, and equipment optimization for mobile practices.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span data-bind="course.duration">12 hours</span>
+                            </div>
+                            <button data-event="click:registerCourse" data-course-id="advanced-equipment" 
+                                    class="bg-brand-blue text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors font-medium">
+                                Register Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 3: Business Management -->
+                <div class="bg-white rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
+                    <!-- Dental practice management and consultation -->
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300" 
+                         alt="Professional business meeting and dental practice management" 
+                         class="w-full h-48 object-cover rounded-t-xl" />
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-purple-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                                8 CE Hours
+                            </span>
+                            <span class="text-brand-blue font-semibold text-lg">$250</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Mobile Practice Business Management</h3>
+                        <p class="text-gray-600 mb-4">
+                            Learn essential business skills for mobile dental practices including scheduling, billing, and patient management.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span data-bind="course.duration">8 hours</span>
+                            </div>
+                            <button data-event="click:registerCourse" data-course-id="business-management" 
+                                    class="bg-brand-blue text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors font-medium">
+                                Register Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- @END_MAP )) -->
+
+            <div class="text-center mt-12">
+                <button data-event="click:viewAllCourses" class="bg-white border-2 border-brand-blue text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue hover:text-white transition-colors">
+                    View All Courses
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Course Catalog -->
+
+    <!-- @COMPONENT: Registration Form Modal Trigger -->
+    <section class="py-16 bg-gradient-to-r from-brand-blue to-blue-600">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                Ready to Advance Your Practice?
+            </h2>
+            <p class="text-xl text-blue-100 mb-8">
+                Join hundreds of dental professionals who have enhanced their mobile dentistry skills
+            </p>
+            <button data-event="click:openRegistrationModal" class="bg-white text-brand-blue px-10 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors">
+                Start Registration Process
+            </button>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Registration Form Modal Trigger -->
+
+    <!-- @COMPONENT: Pricing Section -->
+    <section id="pricing" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Transparent Pricing
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Professional education at competitive rates
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Course Pricing Cards -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border-2 border-transparent hover:border-brand-blue transition-colors">
+                    <div class="text-center">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Fundamentals Course</h3>
+                        <div class="text-3xl font-bold text-brand-blue mb-2">$400</div>
+                        <p class="text-gray-600 mb-6">16 CE Hours</p>
+                        <ul class="text-left space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-gray-700">Complete mobile setup guide</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-gray-700">Equipment protocols</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-gray-700">Patient care standards</span>
+                            </li>
+                        </ul>
+                        <button data-event="click:selectPricing" data-course="fundamentals" 
+                                class="w-full bg-brand-blue text-white py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
+                            Select Course
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 border-2 border-transparent hover:border-brand-blue transition-colors">
+                    <div class="text-center">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Advanced Equipment</h3>
+                        <div class="text-3xl font-bold text-brand-blue mb-2">$350</div>
+                        <p class="text-gray-600 mb-6">12 CE Hours</p>
+                        <ul class="text-left space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-gray-700">Latest technology mastery</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-gray-700">Digital imaging techniques</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-gray-700">Equipment optimization</span>
+                            </li>
+                        </ul>
+                        <button data-event="click:selectPricing" data-course="advanced" 
+                                class="w-full bg-brand-blue text-white py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
+                            Select Course
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 border-2 border-transparent hover:border-brand-blue transition-colors">
+                    <div class="text-center">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Business Management</h3>
+                        <div class="text-3xl font-bold text-brand-blue mb-2">$250</div>
+                        <p class="text-gray-600 mb-6">8 CE Hours</p>
+                        <ul class="text-left space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-gray-700">Scheduling systems</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-gray-700">Billing optimization</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-gray-700">Patient management</span>
+                            </li>
+                        </ul>
+                        <button data-event="click:selectPricing" data-course="business" 
+                                class="w-full bg-brand-blue text-white py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
+                            Select Course
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-brand-blue to-blue-600 text-white rounded-xl shadow-lg p-8 border-2 border-brand-blue relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-yellow-400 text-gray-900 px-4 py-1 rounded-full text-sm font-bold">POPULAR</span>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-xl font-bold mb-4">Complete Bundle</h3>
+                        <div class="text-3xl font-bold mb-2">$850</div>
+                        <p class="text-blue-100 mb-6">All 3 Courses (36 CE Hours)</p>
+                        <ul class="text-left space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-yellow-400 mr-3"></i>
+                                <span>All course materials</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-yellow-400 mr-3"></i>
+                                <span>Priority support</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-yellow-400 mr-3"></i>
+                                <span>Save $150</span>
+                            </li>
+                        </ul>
+                        <button data-event="click:selectPricing" data-course="bundle" 
+                                class="w-full bg-white text-brand-blue py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            Select Bundle
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-gray-600 mb-4">
+                    <i class="fas fa-shield-alt text-green-500 mr-2"></i>
+                    Secure payment processing via STAX Payment Systems
+                </p>
+                <p class="text-sm text-gray-500">
+                    All major credit cards accepted • Instant enrollment confirmation
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Pricing Section -->
+
+    <!-- @COMPONENT: About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                        About Mobile Care Dentistry
+                    </h2>
+                    <p class="text-lg text-gray-700 mb-6">
+                        With over a decade of experience in mobile dental services, we understand the unique challenges 
+                        and opportunities in bringing quality dental care directly to patients.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-8">
+                        Our continuing education programs are designed by practicing mobile dentists who have built 
+                        successful practices and want to share their expertise with fellow professionals.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-brand-blue rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-award text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">CA Board Certified</h3>
+                                <p class="text-sm text-gray-600">All courses approved</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-users text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">500+ Graduates</h3>
+                                <p class="text-sm text-gray-600">Successful practitioners</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button data-event="click:learnMore" class="bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
+                            Learn More
+                        </button>
+                        <a href="https://www.mobilecaredentist.com" target="_blank" 
+                           class="border-2 border-brand-blue text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue hover:text-white transition-colors text-center">
+                            Visit Main Website
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <!-- Professional dentist providing mobile care -->
+                    <img src="https://pixabay.com/get/gcaf7a4d7fb21d22c610382224d840d652c4ae859954377e16dd64ae37456e124251e851c3553987d068170882148de1ef7b45f681a1d725cff05c31779ca9daf_1280.jpg" 
+                         alt="Professional dentist providing mobile dental care to patient" 
+                         class="rounded-xl shadow-2xl w-full h-auto" />
+                    
+                    <!-- Testimonial Overlay -->
+                    <div class="absolute -bottom-8 -right-8 bg-white p-6 rounded-xl shadow-lg max-w-sm">
+                        <div class="flex items-center mb-3">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-700 mb-3" data-mock="true">
+                            "The mobile dentistry course transformed my practice. Excellent instruction and practical knowledge."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-brand-blue rounded-full flex items-center justify-center mr-3">
+                                <span class="text-white text-xs font-bold">DR</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-900 text-sm" data-mock="true">Dr. Sarah Johnson</p>
+                                <p class="text-xs text-gray-600" data-mock="true">Mobile Dentist, San Francisco</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: About Section -->
+
+    <!-- @COMPONENT: Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Get in Touch
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Have questions about our courses? We're here to help.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Contact Information -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-8">Contact Information</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-brand-blue rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-phone text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Phone</h4>
+                                <p class="text-gray-600">949-274-9431</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-brand-blue rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Email</h4>
+                                <p class="text-gray-600">kookarimidds@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-brand-blue rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-globe text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Website</h4>
+                                <a href="https://www.mobilecaredentist.com" class="text-brand-blue hover:text-blue-600">
+                                    www.mobilecaredentist.com
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10 p-6 bg-white rounded-xl shadow-lg">
+                        <h4 class="font-bold text-gray-900 mb-4">Course Director</h4>
+                        <div class="flex items-center">
+                            <div class="w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white font-bold text-lg">DK</span>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-gray-900">Dr. Koo Karimi</h5>
+                                <p class="text-gray-600">Mobile Care Dentistry Founder</p>
+                                <p class="text-sm text-gray-500">15+ years mobile dentistry experience</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
+                    <!-- @STATE: formData:object = {} -->
+                    <form data-event="submit:handleContactForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                                <input type="text" id="firstName" name="firstName" data-bind="formData.firstName" 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-colors"
+                                       placeholder="Enter your first name" required>
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" data-bind="formData.lastName"
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-colors"
+                                       placeholder="Enter your last name" required>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" data-bind="formData.email"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-colors"
+                                   placeholder="Enter your email address" required>
+                        </div>
+
+                        <div>
+                            <label for="licenseNumber" class="block text-sm font-medium text-gray-700 mb-2">CA Dental License Number</label>
+                            <input type="text" id="licenseNumber" name="licenseNumber" data-bind="formData.licenseNumber"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-colors"
+                                   placeholder="Enter your license number">
+                        </div>
+
+                        <div>
+                            <label for="inquiry" class="block text-sm font-medium text-gray-700 mb-2">Inquiry Type</label>
+                            <select id="inquiry" name="inquiry" data-bind="formData.inquiry"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-colors" required>
+                                <option value="">Select inquiry type</option>
+                                <option value="course-info">Course Information</option>
+                                <option value="registration">Registration Help</option>
+                                <option value="technical">Technical Support</option>
+                                <option value="general">General Question</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" data-bind="formData.message"
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-colors"
+                                      placeholder="Enter your message" required></textarea>
+                        </div>
+
+                        <button type="submit" data-implementation="Should validate form and send email notification"
+                                class="w-full bg-brand-blue text-white py-4 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact Section -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Brand -->
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-brand-blue rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-tooth text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-xl font-bold text-white">MOBILE CARE</h1>
+                            <p class="text-sm text-gray-300 font-medium">DENTISTRY</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md">
+                        Advancing mobile dentistry through comprehensive continuing education and professional development programs.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-brand-blue transition-colors">
+                            <i class="fab fa-facebook-f text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-brand-blue transition-colors">
+                            <i class="fab fa-linkedin-in text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-brand-blue transition-colors">
+                            <i class="fab fa-youtube text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#courses" class="text-gray-300 hover:text-white transition-colors">Courses</a></li>
+                        <li><a href="#pricing" class="text-gray-300 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition-colors">About</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="https://www.mobilecaredentist.com" class="text-gray-300 hover:text-white transition-colors">Main Website</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Support</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Registration Support</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Technical Support</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Course Materials</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Certification</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-gray-400 text-sm mb-4 md:mb-0">
+                        © 2024 Mobile Care Dentistry. All rights reserved.
+                    </div>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">CA Board Compliance</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- Registration Modal (Hidden by default) -->
+    <!-- @STATE: showRegistrationModal:boolean = false -->
+    <div id="registrationModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-screen overflow-y-auto">
+                <div class="p-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold text-gray-900">Course Registration</h2>
+                        <button data-event="click:closeRegistrationModal" class="text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                    </div>
+
+                    <!-- @FUNCTIONALITY: This form should integrate with STAX payment processing -->
+                    <form data-event="submit:handleRegistration" class="space-y-6">
+                        <!-- Personal Information -->
+                        <div class="border-b border-gray-200 pb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">Personal Information</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                                    <input type="text" required data-bind="registration.firstName"
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                                    <input type="text" required data-bind="registration.lastName"
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Professional Information -->
+                        <div class="border-b border-gray-200 pb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">Professional Information</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">CA Dental License Number</label>
+                                    <input type="text" required data-bind="registration.licenseNumber" 
+                                           data-implementation="Should validate CA dental license format"
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Practice Name</label>
+                                    <input type="text" data-bind="registration.practiceName"
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course Selection -->
+                        <div class="border-b border-gray-200 pb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">Course Selection</h3>
+                            <div class="space-y-3">
+                                <label class="flex items-center">
+                                    <input type="checkbox" data-bind="registration.courses" value="fundamentals" 
+                                           class="mr-3 w-4 h-4 text-brand-blue border-gray-300 rounded focus:ring-brand-blue">
+                                    <span>Mobile Dentistry Fundamentals - $400 (16 CE Hours)</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" data-bind="registration.courses" value="advanced" 
+                                           class="mr-3 w-4 h-4 text-brand-blue border-gray-300 rounded focus:ring-brand-blue">
+                                    <span>Advanced Mobile Equipment - $350 (12 CE Hours)</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" data-bind="registration.courses" value="business" 
+                                           class="mr-3 w-4 h-4 text-brand-blue border-gray-300 rounded focus:ring-brand-blue">
+                                    <span>Business Management - $250 (8 CE Hours)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Payment Information -->
+                        <div class="pb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">Payment Information</h3>
+                            <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-medium text-gray-900">Total Amount:</span>
+                                    <span class="text-2xl font-bold text-brand-blue" data-bind="registration.totalAmount">$0</span>
+                                </div>
+                            </div>
+                            <!-- @FUNCTIONALITY: STAX Payment processor integration should be implemented here -->
+                            <div class="text-center">
+                                <p class="text-gray-600 mb-4">Secure payment processing powered by STAX</p>
+                                <button type="submit" data-implementation="Should process payment via STAX API"
+                                        class="bg-brand-blue text-white px-10 py-4 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
+                                    Complete Registration & Payment
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // TODO: Implement business logic, API calls, and state management
+        (function() {
+            // Registration modal functionality
+            const registrationModal = document.getElementById('registrationModal');
+            
+            // Open registration modal
+            document.addEventListener('click', function(e) {
+                if (e.target.matches('[data-event*="openRegistrationModal"]') || 
+                    e.target.matches('[data-event*="registerCourse"]')) {
+                    registrationModal.classList.remove('hidden');
+                }
+            });
+            
+            // Close registration modal
+            document.addEventListener('click', function(e) {
+                if (e.target.matches('[data-event*="closeRegistrationModal"]') || 
+                    (e.target === registrationModal)) {
+                    registrationModal.classList.add('hidden');
+                }
+            });
+            
+            // Smooth scrolling for anchor links
+            document.addEventListener('click', function(e) {
+                if (e.target.matches('[data-event*="scrollToCourses"]')) {
+                    document.getElementById('courses').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+            
+            // Calculate total amount based on selected courses
+            const courseCheckboxes = document.querySelectorAll('input[data-bind="registration.courses"]');
+            const totalAmountElement = document.querySelector('[data-bind="registration.totalAmount"]');
+            
+            const coursePrices = {
+                'fundamentals': 400,
+                'advanced': 350,
+                'business': 250
+            };
+            
+            function updateTotal() {
+                let total = 0;
+                courseCheckboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        total += coursePrices[checkbox.value];
+                    }
+                });
+                
+                // Apply bundle discount if all courses selected
+                if (total === 1000) {
+                    total = 850; // Bundle price
+                }
+                
+                if (totalAmountElement) {
+                    totalAmountElement.textContent = `$${total}`;
+                }
+            }
+            
+            courseCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateTotal);
+            });
+        })();
+    </script>
+</body>
+</html>
